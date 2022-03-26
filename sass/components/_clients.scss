@@ -1,0 +1,33 @@
+.clients {
+  &__title {
+    @extend %titles;
+  }
+  &__list {
+    @extend %list-style;
+  }
+  &__item {
+    margin-left: 30px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &__link {
+    display: flex;
+    height: 92px;
+    width: 170px;
+    border: 1px solid map-get($colors, 'social');
+    border-radius: 4px;
+    transition: border-color $chang-time $chang-func;
+    &:hover,
+    &:focus {
+      border-color: map-get($colors, 'accent');
+      .clients__icon {
+        fill: map-get($colors, 'accent');
+      }
+    }
+  }
+  &__icon {
+    fill: map-get($colors, 'social');
+    transition: fill $chang-time $chang-func;
+  }
+}

@@ -1,0 +1,153 @@
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: map-get($colors, 'hero-bg');
+  &__socials-container {
+    margin-left: 70px;
+  }
+  &__call {
+    font-family: map-get($fonts, 'main');
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: map-get($colors, 'light');
+  }
+  &__socials {
+    @extend %list-style;
+    margin-top: 20px;
+    &-icon {
+      fill: map-get($colors, 'light');
+      height: 20px;
+      width: 20px;
+    }
+    &-link {
+      @extend %centered;
+      height: 44px;
+      width: 44px;
+      border-radius: 50%;
+      background-color: map-get($colors, 'links');
+      transition: background-color $chang-time $chang-func;
+      &:hover,
+      &:focus {
+        background-color: map-get($colors, 'accent');
+      }
+    }
+  }
+  &__form {
+    margin-left: 93px;
+    &-box {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
+  }
+  &__input {
+    border: 1px solid map-get($colors, 'input-border');
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px map-get($colors, 'shadow3');
+    border-radius: 4px;
+    width: 358px;
+    height: 50px;
+    background-color: map-get($colors, 'hero-bg');
+    margin-right: 12px;
+    padding-left: 16px;
+    color: map-get($colors, 'light');
+    &::placeholder {
+      font-family: map-get($fonts, 'main');
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.25;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.03em;
+      color: map-get($colors, 'contacts');
+    }
+  }
+  .container {
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.address {
+  width: 231px;
+  &__logo {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-family: map-get($fonts, 'logo');
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: map-get($colors, 'light');
+    text-decoration: none;
+  }
+  &__logo-accent {
+    color: map-get($colors, 'accent');
+  }
+  &__location {
+    margin-bottom: 9px;
+    color: map-get($colors, 'light');
+    font-style: normal;
+  }
+  &__contacts {
+    @extend %list-style;
+    flex-direction: column;
+  }
+  &__item:first-child {
+    margin-bottom: 9px;
+  }
+  &__link {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14px;
+    letter-spacing: 0.02em;
+    color: map-get($colors, 'contacts');
+    transition: color $chang-time $chang-func;
+    &:hover,
+    &:focus {
+      color: map-get($colors, 'accent');
+    }
+    &:visited {
+      color: map-get($colors, 'contacts');
+    }
+  }
+}
+
+.btn {
+  @extend %centered;
+  background-color: map-get($colors, 'accent');
+  width: 200px;
+  height: 50px;
+  border-radius: 4px;
+  border-color: map-get($colors, 'accent');
+  cursor: pointer;
+  transition: background-color $chang-time $chang-func, box-shadow $chang-time $chang-func;
+  &:hover,
+  &:focus {
+    background-color: map-get($colors, 'btn');
+    box-shadow: 0px 4px 4px map-get($colors, 'shadow3');
+  }
+  &__txt {
+    color: map-get($colors, 'light');
+    font-family: map-get($fonts, 'main');
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    margin-right: 10px;
+  }
+  &__icon {
+    fill: map-get($colors, 'light');
+    height: 24px;
+    width: 24px;
+  }
+}

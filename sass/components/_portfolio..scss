@@ -1,0 +1,116 @@
+.portfolio__title {
+  @extend %visually-hidden;
+}
+
+.filter {
+  @extend %list-style;
+  @extend %centered;
+  margin-bottom: 50px;
+  &__item {
+    margin-right: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__btn {
+    padding: 6px 22px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+    text-align: center;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    color: map-get($colors, 'nav');
+    background-color: map-get($colors, 'team-bg');
+    border-radius: 4px;
+    border-color: transparent;
+    transition: background-color $chang-time $chang-func, color $chang-time $chang-func,
+      box-shadow $chang-time $chang-func;
+    &:hover,
+    &:focus {
+      background-color: map-get($colors, 'accent');
+      color: map-get($colors, 'light');
+      box-shadow: 0px 3px 1px map-get($colors, 'modal-border'),
+        0px 1px 2px map-get($colors, 'shadow4'), 0px 2px 2px map-get($colors, 'shadow1');
+    }
+  }
+  &__current {
+    background-color: map-get($colors, 'accent');
+    color: map-get($colors, 'light');
+    box-shadow: 0px 3px 1px map-get($colors, 'modal-border'),
+      0px 1px 2px map-get($colors, 'shadow4'), 0px 2px 2px map-get($colors, 'shadow1');
+  }
+}
+
+.examples {
+  @extend %list-style;
+  flex-wrap: wrap;
+  &__item {
+    margin-left: 30px;
+    margin-top: 30px;
+    &:nth-child(3n + 1) {
+      margin-left: 0;
+    }
+    &:nth-last-child(n + 7) {
+      margin-top: 0;
+    }
+  }
+  &__link {
+    display: block;
+    width: 370px;
+    text-decoration: none;
+    transition: box-shadow $chang-time $chang-func;
+    &:hover,
+    &:focus {
+      box-shadow: 0px 1px 1px map-get($colors, 'shadow1'), 0px 4px 4px map-get($colors, 'shadow5'),
+        1px 4px 6px map-get($colors, 'shadow6');
+      .examples__text {
+        transform: translate(0, -100%);
+      }
+    }
+  }
+  &__box {
+    position: relative;
+    overflow: hidden;
+  }
+  &__text {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    background-color: map-get($colors, 'examples-bg');
+    color: map-get($colors, 'light');
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 100%;
+    padding: 63px 24px;
+    transition: transform $chang-time $chang-func;
+  }
+  &__description {
+    padding: 20px 24px;
+    border-bottom: 1px solid map-get($colors, 'border');
+    border-left: 1px solid map-get($colors, 'border');
+    border-right: 1px solid map-get($colors, 'border');
+  }
+  &__name {
+    margin-bottom: 4px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: map-get($colors, 'nav');
+  }
+  &__field {
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.03em;
+    color: map-get($colors, 'description');
+  }
+  &__photo {
+    display: block;
+  }
+}

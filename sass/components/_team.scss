@@ -1,0 +1,78 @@
+.team {
+  background-color: map-get($colors, 'team-bg');
+  &__title {
+    @extend %titles;
+  }
+  &__list {
+    @extend %list-style;
+  }
+}
+
+.member {
+  width: 270px;
+  margin-right: 30px;
+  background-color: map-get($colors, 'light');
+  box-shadow: 0px 1px 3px map-get($colors, 'shadow1'), 0px 1px 1px map-get($colors, 'shadow2'),
+    0px 2px 1px map-get($colors, 'backdrp');
+  border-radius: 0px 0px 4px 4px;
+  &:last-child {
+    margin-right: 0;
+  }
+  &__title {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: map-get($colors, 'nav');
+  }
+  &__description {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  &__text {
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: map-get($colors, 'description');
+  }
+  &__photo {
+    display: block;
+  }
+}
+
+.socials {
+  @extend %list-style;
+  justify-content: center;
+  &__item {
+    margin-left: 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &__link {
+    @extend %centered;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    background-color: map-get($colors, 'light');
+    transition: background-color $chang-time $chang-func;
+    &:hover,
+    &:focus {
+      background-color: map-get($colors, 'accent');
+      .socials__icon {
+        fill: map-get($colors, 'light');
+      }
+    }
+  }
+  &__icon {
+    fill: map-get($colors, 'social');
+    height: 20px;
+    width: 20px;
+    transition: fill $chang-time $chang-func;
+  }
+}

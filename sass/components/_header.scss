@@ -1,0 +1,120 @@
+.header {
+  border-bottom: 1px solid map-get($colors, 'header-border');
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    margin-right: 93px;
+    font-family: map-get($fonts, 'logo');
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: map-get($colors, 'main');
+    text-decoration: none;
+    padding-top: 24px;
+    padding-bottom: 25px;
+  }
+  &__logo-accent {
+    color: map-get($colors, 'accent');
+  }
+  &__contacts-list {
+    @extend %list-style;
+    display: flex;
+  }
+  &__contacts-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14px;
+    letter-spacing: 0.02em;
+    color: map-get($colors, 'description');
+    transition: color $chang-time $chang-func;
+    &:hover,
+    &:focus {
+      color: map-get($colors, 'accent');
+    }
+    &:visited {
+      color: map-get($colors, 'description');
+    }
+  }
+  &__contacts-item:first-child {
+    margin-right: 50px;
+  }
+
+  &__contacts-icon {
+    margin-right: 10px;
+    height: 16px;
+    width: 16px;
+    fill: map-get($colors, 'description');
+    transition: fill $chang-time $chang-func;
+  }
+
+  &__contacts-link:hover,
+  &__contacts-link:focus {
+    .header__contacts-icon {
+      fill: map-get($colors, 'accent');
+    }
+  }
+}
+
+.main-nav {
+  margin-right: auto;
+  &__list {
+    @extend %list-style;
+    display: flex;
+  }
+  &__item {
+    margin-right: 50px;
+    position: relative;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: map-get($colors, 'nav');
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    transition: color $chang-time $chang-func;
+    &:visited {
+      color: map-get($colors, 'nav');
+    }
+    &:hover,
+    &:focus {
+      color: map-get($colors, 'accent');
+    }
+  }
+  &__current {
+    display: block;
+    color: map-get($colors, 'accent');
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    &::after {
+      content: '';
+      display: block;
+      background: map-get($colors, 'accent');
+      border-radius: 2px;
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      bottom: -1px;
+    }
+  }
+}

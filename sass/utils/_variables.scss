@@ -1,0 +1,35 @@
+$colors: (
+  'main': #000000,
+  'accent': #2196f3,
+  'light': #ffffff,
+  'description': #757575,
+  'placeholder': rgba(117, 117, 117, 0.5),
+  'contacts': rgba(255, 255, 255, 0.6),
+  'nav': #212121,
+  'input': rgba(33, 33, 33, 0.2),
+  'hero-bg': #2f303a,
+  'btn': #188ce8,
+  'team-bg': #f5f4fa,
+  'border': #eeeeee,
+  'header-border': #ececec,
+  'social': #afb1b8,
+  'hero-dark': rgba(47, 48, 58, 0.4),
+  'links': rgba(255, 255, 255, 0.1),
+  'employment': rgba(47, 48, 58, 0.8),
+  'examples-bg': rgba(33, 150, 243, 0.9),
+  'backdrp': rgba(0, 0, 0, 0.2),
+  'modal-boorder': rgba(0, 0, 0, 0.1),
+  'shadow1': rgba(0, 0, 0, 0.12),
+  'shadow2': rgba(0, 0, 0, 0.14),
+  'shadow3': rgba(0, 0, 0, 0.15),
+  'shadow4': rgba(0, 0, 0, 0.08),
+  'shadow5': rgba(0, 0, 0, 0.06),
+  'shadow6': rgba(0, 0, 0, 0.16),
+  'input-border': rgba(255, 255, 255, 0.3),
+);
+$fonts: (
+  'main': Roboto,
+  'logo': Raleway,
+);
+$chang-func: cubic-bezier(0.4, 0, 0.2, 1);
+$chang-time: 250ms;
