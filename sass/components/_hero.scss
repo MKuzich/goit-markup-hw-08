@@ -1,29 +1,52 @@
 .hero {
-  display: block;
-  max-width: 1600px;
-  height: 600px;
+  @extend %centered;
+  height: 400px;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  background-repeat: no-repeat;
+  background-color: map-get($colors, 'hero-bg');
+  max-width: 480px;
   background-image: linear-gradient(
       to right,
       map-get($colors, 'hero-dark'),
       map-get($colors, 'hero-dark')
     ),
-    url('../images/hero-bckgrnd.jpg');
-  background-repeat: no-repeat;
-  background-size: 1600px;
-  background-color: map-get($colors, 'hero-bg');
+    url('../images/hero-bg-480.jpg');
+  background-size: 480px;
+  @include respond-to('tablet') {
+    max-width: 768px;
+    background-image: linear-gradient(
+        to right,
+        map-get($colors, 'hero-dark'),
+        map-get($colors, 'hero-dark')
+      ),
+      url('../images/hero-bg-768.jpg');
+    background-size: 768px;
+  }
+  @include respond-to('desktop') {
+    max-width: 1600px;
+    height: 600px;
+    background-image: linear-gradient(
+        to right,
+        map-get($colors, 'hero-dark'),
+        map-get($colors, 'hero-dark')
+      ),
+      url('../images/hero-bckgrnd.jpg');
+    background-size: 1600px;
+  }
   &__title {
-    margin-bottom: 30px;
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
+    font-size: 26px;
+    line-height: 1.62;
+    margin-bottom: 30px;
     text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: map-get($colors, 'light');
+    @include respond-to('desktop') {
+      font-size: 44px;
+      line-height: 1.36;
+    }
   }
   &__btn {
     @extend %centered;

@@ -1,23 +1,59 @@
 .clients {
   &__title {
     @extend %titles;
+    @include respond-to('desktop') {
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
   }
   &__list {
     @extend %list-style;
+    display: flex;
+    flex-wrap: wrap;
   }
   &__item {
     margin-left: 30px;
+    margin-bottom: 30px;
+    &:nth-child(2n + 1) {
+      @media screen and (max-width: 767px) {
+        margin-left: 0;
+      }
+    }
+    &:nth-last-child(-n + 2) {
+      @media screen and (max-width: 767px) {
+        margin-bottom: 0;
+      }
+    }
+    &:nth-last-child(-n + 3) {
+      @media screen and (min-width: 768px) and (max-width: 1199px) {
+        margin-bottom: 0;
+      }
+    }
+    &:nth-child(3n + 1) {
+      @media screen and (min-width: 768px) and (max-width: 1199px) {
+        margin-left: 0;
+      }
+    }
     &:first-child {
-      margin-left: 0;
+      @include respond-to('desktop') {
+        margin-left: 0;
+      }
     }
   }
+
   &__link {
     display: flex;
     height: 92px;
-    width: 170px;
+    width: 210px;
     border: 1px solid map-get($colors, 'social');
     border-radius: 4px;
     transition: border-color $chang-time $chang-func;
+    @include respond-to('tablet') {
+      width: 226px;
+    }
+    @include respond-to('desktop') {
+      width: 170px;
+    }
     &:hover,
     &:focus {
       border-color: map-get($colors, 'accent');

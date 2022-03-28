@@ -33,3 +33,14 @@ $fonts: (
 );
 $chang-func: cubic-bezier(0.4, 0, 0.2, 1);
 $chang-time: 250ms;
+$breakpoints: (
+  'mobile': (
+    min-width: 480px,
+  ),
+  'tablet': (
+    min-width: 768px,
+  ),
+  'desktop': (
+    min-width: 1200px,
+  ),
+) !default;

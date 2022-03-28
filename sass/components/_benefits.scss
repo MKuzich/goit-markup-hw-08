@@ -1,12 +1,16 @@
 .benefits {
   &__list {
     @extend %list-style;
+    @include respond-to('tablet') {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
   &__container {
     @extend %centered;
     margin-bottom: 30px;
     height: 120px;
-    width: 270px;
+    width: 100%;
     background-color: map-get($colors, 'team-bg');
   }
   &__icon {
@@ -14,10 +18,28 @@
     width: 70px;
   }
   &__item {
-    width: 270px;
-    margin-left: 30px;
+    width: 100%;
+    @include respond-to('tablet') {
+      width: 354px;
+      margin-left: 30px;
+    }
+    @include respond-to('desktop') {
+      width: 270px;
+    }
     &:first-child {
-      margin-left: 0;
+      @include respond-to('desktop') {
+        margin-left: 0;
+      }
+    }
+    &:nth-child(2n + 1) {
+      @media screen and (min-width: 768px) and (max-width: 1199px) {
+        margin-left: 0;
+      }
+    }
+    &:nth-child(-n + 2) {
+      @media screen and (min-width: 768px) and (max-width: 1199px) {
+        margin-bottom: 30px;
+      }
     }
     &-title {
       margin-bottom: 10px;
@@ -27,6 +49,10 @@
       line-height: 1.14;
       letter-spacing: 0.03em;
       text-transform: uppercase;
+      text-align: center;
+      @include respond-to('tablet') {
+        text-align: left;
+      }
     }
     &-text {
       line-height: 1.71;

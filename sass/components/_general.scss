@@ -1,3 +1,14 @@
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
 body {
   font-family: map-get($fonts, 'main');
   font-size: 14px;
@@ -15,21 +26,32 @@ ul {
 }
 
 .container {
-  width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+  @include respond-to('mobile') {
+    width: 480px;
+  }
+  @include respond-to('tablet') {
+    width: 768px;
+  }
+  @include respond-to('desktop') {
+    width: 1200px;
+  }
 }
 
 %list-style {
   list-style-type: none;
-  display: flex;
 }
 
 .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include respond-to('desktop') {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 %centered {
@@ -52,9 +74,9 @@ ul {
 }
 
 %titles {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 28px;
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;

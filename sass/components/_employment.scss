@@ -1,10 +1,15 @@
 .employment {
+  display: none;
+  @include respond-to('desktop') {
+    display: block;
+  }
   padding-bottom: 94px;
   &__title {
     @extend %titles;
   }
   &__list {
     @extend %list-style;
+    display: flex;
   }
   &__img {
     display: block;

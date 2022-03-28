@@ -2,21 +2,57 @@
   background-color: map-get($colors, 'team-bg');
   &__title {
     @extend %titles;
+    @include respond-to('desktop') {
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
   }
   &__list {
     @extend %list-style;
+    @include respond-to('tablet') {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 }
 
 .member {
-  width: 270px;
-  margin-right: 30px;
+  width: 100%;
   background-color: map-get($colors, 'light');
   box-shadow: 0px 1px 3px map-get($colors, 'shadow1'), 0px 1px 1px map-get($colors, 'shadow2'),
     0px 2px 1px map-get($colors, 'backdrp');
   border-radius: 0px 0px 4px 4px;
+  margin-bottom: 30px;
+  @include respond-to('tablet') {
+    width: 354px;
+    margin-left: 30px;
+  }
+  @include respond-to('desktop') {
+    width: 270px;
+    margin-bottom: 0;
+  }
   &:last-child {
-    margin-right: 0;
+    margin-bottom: 0;
+  }
+  &:nth-last-child(-n + 2) {
+    @include respond-to('tablet') {
+      margin-bottom: 0;
+    }
+  }
+  &:nth-child(2n + 1) {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      margin-left: 0;
+    }
+  }
+  &:first-child {
+    @include respond-to('desktop') {
+      margin-left: 0;
+    }
+  }
+  &:nth-child(-n + 2) {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      margin-bottom: 30px;
+    }
   }
   &__title {
     margin-bottom: 10px;
@@ -29,7 +65,10 @@
   }
   &__description {
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 24px;
+    @include respond-to('desktop') {
+      padding-bottom: 30px;
+    }
   }
   &__text {
     margin-bottom: 16px;
@@ -47,6 +86,7 @@
 
 .socials {
   @extend %list-style;
+  display: flex;
   justify-content: center;
   &__item {
     margin-left: 10px;
