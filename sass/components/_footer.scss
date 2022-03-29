@@ -76,6 +76,9 @@
     margin-bottom: 20px;
     padding-left: 16px;
     color: map-get($colors, 'light');
+    @include respond-to('tablet') {
+      width: 450px;
+    }
     @include respond-to('desktop') {
       width: 358px;
       margin-right: 12px;
