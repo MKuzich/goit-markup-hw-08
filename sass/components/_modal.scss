@@ -8,6 +8,7 @@
   background-color: map-get($colors, 'backdrp');
   transition: opacity $chang-time $chang-func, visibility $chang-time $chang-func;
   visibility: visible;
+  overflow-y: scroll;
   &.is-hidden {
     opacity: 0;
     pointer-events: none;
