@@ -92,11 +92,15 @@
     }
   }
   &__contacts-icon {
+      @media screen and (max-width: 767px) {
+      display: none;
+      }
     margin-right: 10px;
     height: 14px;
     width: 14px;
     fill: map-get($colors, 'description');
     transition: fill $chang-time $chang-func;
+
     @include respond-to('desktop') {
       height: 16px;
       width: 16px;

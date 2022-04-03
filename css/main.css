@@ -221,6 +221,12 @@ ul {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media screen and (max-width: 767px) {
+  .header__contacts-icon {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .header__contacts-icon {
     height: 16px;
