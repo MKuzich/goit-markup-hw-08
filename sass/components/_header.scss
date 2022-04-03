@@ -4,9 +4,11 @@
   .container {
     display: flex;
     align-items: center;
+    @media screen and(min-width: 768px) and(max-width: 1199px) {
+      justify-content: space-between;
+    }
   }
   &__logo {
-    margin-right: 93px;
     font-family: map-get($fonts, 'logo');
     font-weight: 700;
     font-size: 26px;
@@ -16,6 +18,9 @@
     text-decoration: none;
     padding-top: 24px;
     padding-bottom: 25px;
+    @include respond-to('desktop') {
+      margin-right: 93px;
+    }
   }
   &__logo-accent {
     color: map-get($colors, 'accent');
@@ -23,22 +28,34 @@
   &__contacts-list {
     @extend %list-style;
     @include respond-to('tablet') {
+      margin-left: 84px;
+    }
+    @include respond-to('desktop') {
       display: flex;
+      margin-left: 0;
     }
   }
   &__contacts-link {
     display: flex;
     align-items: center;
     text-decoration: none;
-    padding-top: 32px;
-    padding-bottom: 32px;
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
+    font-size: 34px;
+    line-height: 1.18;
     letter-spacing: 0.02em;
     color: map-get($colors, 'description');
     transition: color $chang-time $chang-func;
+    @include respond-to('tablet'){
+      font-size: 12px;
+      line-height: 1.17;
+    }
+    @include respond-to('desktop') {
+      font-size: 14px;
+      line-height: 1.14;
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
     &:hover,
     &:focus {
       color: map-get($colors, 'accent');
@@ -48,15 +65,42 @@
     }
   }
   &__contacts-item:first-child {
-    margin-right: 50px;
+    margin-bottom: 32px;
+    @include respond-to('tablet') {
+      padding-top: 21px;
+      padding-bottom: 5px;
+      margin-bottom: 0;
+    }
+    @include respond-to('desktop') {
+      margin-right: 30px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
-
+  &__contacts-item:last-child {
+    margin-bottom: 64px;
+    @include respond-to('tablet') {
+      margin-left: -2px;
+      padding-top: 5px;
+      padding-bottom: 21px;
+      margin-block: 0;
+    }
+    @include respond-to('desktop') {
+      margin-left: 0px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
   &__contacts-icon {
     margin-right: 10px;
-    height: 16px;
-    width: 16px;
+    height: 14px;
+    width: 14px;
     fill: map-get($colors, 'description');
     transition: fill $chang-time $chang-func;
+    @include respond-to('desktop') {
+      height: 16px;
+      width: 16px;
+    }
   }
 
   &__contacts-link:hover,
@@ -96,7 +140,6 @@
     font-size: 40px;
     line-height: 1.18;
     letter-spacing: 0.02em;
-
     transition: color $chang-time $chang-func;
     @include respond-to('tablet') {
       font-size: 14px;
@@ -183,6 +226,10 @@
     display: flex;
     text-align: center;
   }
+  @include respond-to('desktop') {
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 
 .mobile-socials {
@@ -200,7 +247,13 @@
     }
   }
   &__link {
+    color: map-get($colors, 'accent');
     text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
     &:visited {
       text-decoration: none;
     }
