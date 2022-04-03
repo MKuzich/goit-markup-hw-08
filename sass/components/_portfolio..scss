@@ -92,7 +92,7 @@
   }
   &__link {
     display: block;
-    width: 450px;
+    max-width: 450px;
     text-decoration: none;
     transition: box-shadow $chang-time $chang-func;
     @include respond-to('tablet') {
@@ -115,8 +115,6 @@
     overflow: hidden;
   }
   &__text {
-    font-family: 'Roboto';
-    font-weight: 400;
     font-size: 18px;
     line-height: 1.56;
     letter-spacing: 0.03em;
@@ -137,7 +135,6 @@
   }
   &__name {
     margin-bottom: 4px;
-    font-style: normal;
     font-weight: bold;
     font-size: 18px;
     line-height: 2;
