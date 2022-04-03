@@ -283,10 +283,6 @@ ul {
   }
 }
 
-.main-nav__link:visited {
-  color: #212121;
-}
-
 .main-nav__link:hover, .main-nav__link:focus {
   color: #2196f3;
 }
@@ -313,6 +309,7 @@ ul {
   position: absolute;
   right: 15px;
   top: 10px;
+  z-index: 3;
   margin: 0;
   padding: 0;
   border: none;
@@ -356,6 +353,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 2;
 }
 
 @media screen and (max-width: 767px) {
@@ -679,7 +677,6 @@ ul {
 }
 
 .member {
-  width: 100%;
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
@@ -761,6 +758,7 @@ ul {
 
 .member__photo {
   display: block;
+  max-width: 100%;
 }
 
 .socials {
@@ -1529,5 +1527,6 @@ ul {
 
 .examples__photo {
   display: block;
+  max-width: 100%;
 }
 /*# sourceMappingURL=main.css.map */
