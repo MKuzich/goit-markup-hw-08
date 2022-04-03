@@ -210,7 +210,9 @@
 
 .nav-container {
   &.is-open {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   @media screen and(max-width: 767px) {
     display: none;
@@ -240,10 +242,30 @@
   }
   &__item {
     @media screen and(max-width: 767px) {
-      border-color: map-get($colors, 'input');
-      // border-right: 1px;
-      // border-left: 1px;
-      border-style: solid;
+      margin-left: 20px;
+      position: relative;
+    }
+    &:first-child {
+      @media screen and(max-width: 767px) {
+        margin-left: 0;
+      }
+      &::before {
+        @media screen and(max-width: 767px) {
+          content: '';
+          display: none;
+        }
+      }
+    }
+    &::before {
+      @media screen and(max-width: 767px) {
+        content: '';
+        position:absolute;
+        left: -11px;
+        display: block;
+        height: 22px;
+        width: 1px;
+        background-color: map-get($colors, 'input');
+      }
     }
   }
   &__link {
