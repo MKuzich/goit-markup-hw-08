@@ -64,6 +64,8 @@
     flex-wrap: wrap;
   }
   &__item {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 30px;
     &:nth-child(2n) {
       @include respond-to('tablet') {
@@ -89,9 +91,16 @@
         margin-top: 0;
       }
     }
+    &:nth-last-child(-n + 3) {
+      @include respond-to('desktop') {
+        margin-bottom: 0;
+      }
+    }
   }
   &__link {
+    flex-grow: 1;
     display: block;
+    border: 1px solid map-get($colors, 'border');
     max-width: 450px;
     text-decoration: none;
     transition: box-shadow $chang-time $chang-func;
@@ -121,6 +130,7 @@
     background-color: map-get($colors, 'examples-bg');
     color: map-get($colors, 'light');
     position: absolute;
+    overflow-y: scroll;
     top: 100%;
     left: 0;
     height: 100%;
@@ -129,9 +139,6 @@
   }
   &__description {
     padding: 20px 24px;
-    border-bottom: 1px solid map-get($colors, 'border');
-    border-left: 1px solid map-get($colors, 'border');
-    border-right: 1px solid map-get($colors, 'border');
   }
   &__name {
     margin-bottom: 4px;

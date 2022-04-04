@@ -16,10 +16,12 @@
     letter-spacing: 0.03em;
     color: map-get($colors, 'main');
     text-decoration: none;
-    padding-top: 24px;
-    padding-bottom: 25px;
+    padding-top: 14px;
+    padding-bottom: 15px;
     @include respond-to('desktop') {
       margin-right: 93px;
+      padding-top: 24px;
+      padding-bottom: 25px;
     }
   }
   &__logo-accent {
@@ -41,20 +43,21 @@
     text-decoration: none;
     font-style: normal;
     font-weight: 500;
-    font-size: 34px;
+    font-size: calc(20px + 1vw);
     line-height: 1.18;
     letter-spacing: 0.02em;
     color: map-get($colors, 'description');
     transition: color $chang-time $chang-func;
-    @include respond-to('tablet'){
+    @include respond-to('mobile') {
+      font-size: 34px;
+    }
+    @include respond-to('tablet') {
       font-size: 12px;
       line-height: 1.17;
     }
     @include respond-to('desktop') {
       font-size: 14px;
       line-height: 1.14;
-      padding-top: 32px;
-      padding-bottom: 32px;
     }
     &:hover,
     &:focus {
@@ -64,7 +67,7 @@
       color: map-get($colors, 'description');
     }
   }
-  &__contacts-item:first-child {
+  &__contacts-item:first-child &__contacts-link {
     margin-bottom: 32px;
     @include respond-to('tablet') {
       padding-top: 21px;
@@ -73,11 +76,11 @@
     }
     @include respond-to('desktop') {
       margin-right: 30px;
-      padding-top: 0;
-      padding-bottom: 0;
+      padding-top: 32px;
+      padding-bottom: 32px;
     }
   }
-  &__contacts-item:last-child {
+  &__contacts-item:last-child &__contacts-link {
     margin-bottom: 64px;
     @include respond-to('tablet') {
       margin-left: -2px;
@@ -87,14 +90,14 @@
     }
     @include respond-to('desktop') {
       margin-left: 0px;
-      padding-top: 0;
-      padding-bottom: 0;
+      padding-top: 32px;
+      padding-bottom: 32px;
     }
   }
   &__contacts-icon {
-      @media screen and (max-width: 767px) {
+    @media screen and (max-width: 767px) {
       display: none;
-      }
+    }
     margin-right: 10px;
     height: 14px;
     width: 14px;
@@ -219,7 +222,7 @@
   }
   @media screen and(max-width: 767px) {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -240,34 +243,20 @@
 .mobile-socials {
   @extend %list-style;
   display: flex;
+  flex-wrap: wrap;
   @include respond-to('tablet') {
     display: none;
   }
   &__item {
     @media screen and(max-width: 767px) {
-      margin-left: 20px;
-      position: relative;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-left: 1px solid map-get($colors, 'input');
     }
     &:first-child {
       @media screen and(max-width: 767px) {
-        margin-left: 0;
-      }
-      &::before {
-        @media screen and(max-width: 767px) {
-          content: '';
-          display: none;
-        }
-      }
-    }
-    &::before {
-      @media screen and(max-width: 767px) {
-        content: '';
-        position:absolute;
-        left: -11px;
-        display: block;
-        height: 22px;
-        width: 1px;
-        background-color: map-get($colors, 'input');
+        padding-left: 0;
+        border-left: 0;
       }
     }
   }

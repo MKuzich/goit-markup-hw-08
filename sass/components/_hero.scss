@@ -21,7 +21,7 @@
       url('../images/hero-bg-480@2x.jpg');
   }
   background-size: 480px;
-  @include respond-to('tablet') {
+  @media screen and (min-width: 481px) {
     max-width: 768px;
     background-image: linear-gradient(
         to right,
@@ -39,7 +39,7 @@
     }
     background-size: 768px;
   }
-  @include respond-to('desktop') {
+  @media screen and (min-width: 769px) {
     max-width: 1600px;
     height: 600px;
     background-image: linear-gradient(

@@ -18,6 +18,9 @@
     @include respond-to('mobile') {
       margin-left: 30px;
     }
+    @include respond-to('desktop') {
+      margin-bottom: 0;
+    }
     &:last-child {
       @media screen and (max-width: 479px) {
         margin-bottom: 0;

@@ -8,7 +8,8 @@
   background-color: map-get($colors, 'backdrp');
   transition: opacity $chang-time $chang-func, visibility $chang-time $chang-func;
   visibility: visible;
-  overflow-y: scroll;
+  overflow-y: hidden;
+  background-attachment: fixed;
   &.is-hidden {
     opacity: 0;
     pointer-events: none;
@@ -23,7 +24,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 450px;
+  width: calc(100vw - 30px);
   padding: 40px;
   border-radius: 4px;
   background: map-get($colors, 'light');
@@ -31,6 +32,9 @@
     0px 2px 1px map-get($colors, 'backdrp');
   transform: translate(-50%, -50%) scale(1);
   transition: transform $chang-time $chang-func;
+  @include respond-to('mobile') {
+    width: 450px;
+  }
   @include respond-to('desktop') {
     width: 528px;
   }
