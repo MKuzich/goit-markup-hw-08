@@ -178,6 +178,12 @@ ul {
   color: #757575;
 }
 
+@media screen and (min-width: 1200px) {
+  .header__contacts-item:first-child {
+    margin-right: 30px;
+  }
+}
+
 .header__contacts-item:first-child .header__contacts-link {
   margin-bottom: 32px;
 }
@@ -185,16 +191,26 @@ ul {
 @media screen and (min-width: 768px) {
   .header__contacts-item:first-child .header__contacts-link {
     padding-top: 21px;
-    padding-bottom: 5px;
     margin-bottom: 0;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .header__contacts-item:first-child .header__contacts-link {
-    margin-right: 30px;
     padding-top: 32px;
     padding-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__contacts-item:last-child {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header__contacts-item:last-child {
+    margin-top: 0;
   }
 }
 
@@ -205,7 +221,6 @@ ul {
 @media screen and (min-width: 768px) {
   .header__contacts-item:last-child .header__contacts-link {
     margin-left: -2px;
-    padding-top: 5px;
     padding-bottom: 21px;
     margin-block: 0;
   }
@@ -361,11 +376,30 @@ ul {
   display: none;
 }
 
+.nav-btn.is-open {
+  position: fixed;
+}
+
+@media screen and (max-width: 767px) {
+  .nav-container {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 5000ms cubic-bezier(0.4, 0, 0.2, 1), visibility 5000ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
 .nav-container.is-open {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   z-index: 2;
+}
+
+@media screen and (max-width: 767px) {
+  .nav-container.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -469,7 +503,6 @@ ul {
 @media screen and (min-width: 769px) {
   .hero {
     max-width: 1600px;
-    height: 600px;
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-bg-1600.jpg");
     background-size: 1600px;
   }
@@ -478,6 +511,12 @@ ul {
 @media screen and (min-width: 769px) and (min-device-pixel-ratio: 2), screen and (min-width: 769px) and (min-resolution: 192dpi), screen and (min-width: 769px) and (min-resolution: 2dppx) {
   .hero {
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-bg-1600@2x.jpg");
+  }
+}
+
+@media screen and (min-width: 769px) and (min-width: 1200px) {
+  .hero {
+    height: 600px;
   }
 }
 
