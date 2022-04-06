@@ -227,11 +227,6 @@
 }
 
 .nav-container {
-  @media screen and(max-width: 767px) {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 5000ms $chang-func, visibility 5000ms $chang-func;
-  }
   &.is-open {
     display: flex;
     flex-direction: column;
@@ -239,8 +234,6 @@
     z-index: 2;
     opacity: 1;
     visibility: visible;
-    @media screen and(max-width: 767px) {
-    }
   }
   @media screen and(max-width: 767px) {
     display: none;
@@ -251,6 +244,9 @@
     height: 100vh;
     background-color: map-get($colors, 'light');
     padding: 48px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 5000ms $chang-func, visibility 5000ms $chang-func;
   }
   @include respond-to('tablet') {
     display: flex;
