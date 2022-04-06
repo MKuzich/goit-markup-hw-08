@@ -98,7 +98,6 @@
     }
   }
   &__link {
-    flex-grow: 1;
     display: block;
     border: 1px solid map-get($colors, 'border');
     max-width: 450px;
@@ -138,6 +137,7 @@
     transition: transform $chang-time $chang-func;
   }
   &__description {
+    flex-grow: 1;
     padding: 20px 24px;
   }
   &__name {
