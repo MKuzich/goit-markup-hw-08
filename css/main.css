@@ -380,15 +380,6 @@ ul {
   position: fixed;
 }
 
-.nav-container.is-open {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 2;
-  opacity: 1;
-  visibility: visible;
-}
-
 @media screen and (max-width: 767px) {
   .nav-container {
     display: none;
@@ -417,6 +408,15 @@ ul {
     justify-content: space-between;
     width: 100%;
   }
+}
+
+.nav-container.is-open {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+  opacity: 1;
+  visibility: visible;
 }
 
 .mobile-socials {
@@ -1381,6 +1381,7 @@ ul {
 }
 
 .agreement__checkbox {
+  flex-shrink: 0;
   margin-right: 8px;
   box-sizing: border-box;
   width: 16px;

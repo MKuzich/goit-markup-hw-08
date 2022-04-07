@@ -227,14 +227,6 @@
 }
 
 .nav-container {
-  &.is-open {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 2;
-    opacity: 1;
-    visibility: visible;
-  }
   @media screen and(max-width: 767px) {
     display: none;
     position: fixed;
@@ -255,6 +247,14 @@
   @include respond-to('desktop') {
     justify-content: space-between;
     width: 100%;
+  }
+  &.is-open {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    opacity: 1;
+    visibility: visible;
   }
 }
 

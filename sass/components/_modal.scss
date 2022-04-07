@@ -180,6 +180,7 @@
     }
   }
   &__checkbox {
+    flex-shrink: 0;
     margin-right: 8px;
     box-sizing: border-box;
     width: 16px;
